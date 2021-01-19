@@ -1,5 +1,6 @@
 var xJOS = 225;
 var yJOS = 375;
+var snelheidJOS = 17;
 
 function setup() {
   canvas = createCanvas(450,450);
@@ -12,18 +13,20 @@ function setup() {
 function draw() {
   background('lavender');
   fill('black');
-  // yJOS--;
 
-  xJOS=constrain(xJOS,75,width-75);
-  yJOS=constrain(yJOS,75,height-75);
-  text("x = " + round(xJOS) + " y = " + yJOS,10,20);
-  
+  yJOS-=snelheidJOS;
+  snelheidJOS -= 0.5;
+
+  xJOS = constrain(xJOS,75,width - 75);
+  yJOS = constrain(yJOS,75,height - 75);
+  text("x = " + round(xJOS) + " y = " + yJOS + " snelheid = " + snelheidJOS,10,20);
+
   translate(xJOS,yJOS);
 
   // in de volgende regels wordt JOS getekend
 
   push();
-  scale(1);  
+  scale(1); 
   noStroke();
   fill('indianred');
   ellipse(0,0,150);

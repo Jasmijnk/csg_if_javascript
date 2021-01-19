@@ -8,8 +8,9 @@ function setup() {
 function draw() {
   // teken de grond
   noStroke();
-  fill('wheat');
-  rect(0,350,450,100);
+  fill('tan')
+  translate(25,25);
+
   
   translate(0,0);
   // begin teken het huis
